@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The first function will create a inverse matrix and store it. Everytime when another matrix was input, it will 
+## decide whether this matrix is inverted before, and if it is, the functions will get result from it cache.
 
-## Write a short comment describing this function
+## it will create a inverse function of the input function
 
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
@@ -12,14 +12,14 @@ makeCacheMatrix <- function(x = matrix()) {
         get <- function() x
         setinverse <- function(inverse) m <<- inverse
         getinverse <- function() m
-        matrix(set = set, get = get,
+        list(set = set, get = get,
              setinverse = setinverse,
              getinverse = getinverse)
 
 }
 
 
-## Write a short comment describing this function
+##It will compute the inverse matrix returned from previous function. If it is calculated before, it will draw from its memory directly
 
 cacheSolve <- function(x, ...) {
            m <- x$getinverse()
